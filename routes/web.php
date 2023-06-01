@@ -13,10 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [App\Http\Controllers\LoginController::class, 'login'])->name('login');
+
 
 Auth::routes();
 
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/navbar', [App\Http\Controllers\HomeController::class, 'navbar']);
+Route::get('/tiket', [App\Http\Controllers\PageController::class, 'tiket'])->name(('tiket'));

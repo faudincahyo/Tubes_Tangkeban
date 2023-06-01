@@ -1,0 +1,15 @@
+*, html{
+    margin:0;
+    padding: 0;
+}
+
+main{
+    height: 100vh;
+    background: rgb(199, 235, 199);
+}
+
+.dropdown-toggle{
+    background: red;
+    padding-left: 3rem;
+    
+}

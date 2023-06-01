@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function navbar()
+    {
+        return view('layouts.navbar.navbar');
+    }
 }
