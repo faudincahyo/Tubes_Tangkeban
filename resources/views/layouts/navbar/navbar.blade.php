@@ -21,8 +21,11 @@
 
 <body>
     <div id="app">
-        <h3 class="ms-3 text-success">Bukit Tangkeban</h3>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="p-3 w-25" >
+                <h4 style="color: #1C6758; font-weight:bolder">BUKIT TANGKEBAN</h4>
+                <h4 class="text-success" tyle="font-weight:1px">Bukit Indah Permai</h4>
+            </div>
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -32,17 +35,17 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <ul class="navbar-nav ms-auto">
                         <ul class="navbar-nav mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active text-success" aria-current="page" href="#">Beranda</a>
+                            <li class="nav-item {{ Request::is('home') ? 'active': '' }}">
+                                <a class="nav-link respon-nav text-success" aria-current="page" href="{{ route('home') }}">Beranda</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link " href="/tiket">Tiket</a>
+                            <li class="nav-item {{ Request::is('tiket') ? 'active': '' }}">
+                                <a class="nav-link respon-nav text-success" href="/tiket">Tiket</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link " href="#">Tentang</a>
+                            <li class="nav-item {{ Request::is('tentang') ? 'active': '' }}">
+                                <a class="nav-link respon-nav text-success" href="/tentang">Tentang Kami</a>
                             </li>
                         </ul>
                     </ul>
@@ -51,8 +54,8 @@
                     <ul class="navbar-nav ms-auto">
                         <form class="d-flex me-3" role="search">
                             <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
-                            <button class="btn btn-success" type="submit"><img width="15" height="15"
-                                    src="https://img.icons8.com/ios/15/search--v1.png" alt="search--v1" /></button>
+                            {{-- <button class="btn btn-success" type="submit"><img width="15" height="15"
+                                    src="https://img.icons8.com/ios/15/search--v1.png" alt="search--v1" /></button> --}}
                         </form>
                         <!-- Authentication Links -->
                         @guest
@@ -69,10 +72,10 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle rounded-start-pill text-light"
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle rounded-start-pill text-dark"
                                     href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    |   {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -99,22 +102,24 @@
     </div>
 </body>
 <!-- Footer -->
-<footer class="text-center text-lg-start text-white" style="background-color: #0f4d33">
+<footer class="text-center text-lg-start text-success">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
         <!-- Section: Links -->
         <section class="">
+            <!-- Copyright -->
+            <div class="text-center p-3" >
+                <h3 style="color: #1C6758; font-weight:bolder">BUKIT TANGKEBAN</h3>
+                <h5 class="text-success">Bukit Indah Permai</h5>
+            </div>
+            <!-- Copyright -->
             <!--Grid row-->
             <div class="row">
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">
-                        Bukit Tangkeban
-                    </h6>
                     <p>
-                        Here you can use rows and columns to organize your footer
-                        content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
+                        <img src="{{ asset('assets/image/LOGO BUKIT TANGKEBAN 1.png') }}" alt="">
+
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -123,15 +128,18 @@
 
                 <!-- Grid column -->
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Halaman</h6>
+                    <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #1C6758;">Layanan Wisata</h6>
                     <p>
-                        <a class="text-white">Beranda</a>
+                        Camping Ground
                     </p>
                     <p>
-                        <a class="text-white">Tiket</a>
+                        Homestay
                     </p>
                     <p>
-                        <a class="text-white">Tentang</a>
+                        ARcafe
+                    </p>
+                    <p>
+                        Tangkeban Park
                     </p>
 
                 </div>
@@ -143,30 +151,45 @@
                 <hr class="w-100 clearfix d-md-none" />
 
                 <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                    <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                    <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #1C6758;">Tentang Kami</h6>
+                    <p>
+                        Sejarah Singkat
+                    </p>
+
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #1C6758;">Kontak Kami</h6>
+                    <p>
+                        Desa Nyalembeng, <br>
+                        Kec. Pulosari, Pemalang,<br>
+                        Jawa Tengah, <br>
+                        <br>
+                        0823 2655 9688
+                    </p>
+
                 </div>
                 <!-- Grid column -->
 
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+                    <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #1C6758;">Follow us</h6>
 
                     <!-- Twitter -->
-                    <a href="#"><img width="32" height="32" src="https://img.icons8.com/fluency/32/twitter.png" alt="twitter"/></a>
+                    <a href="#"><img width="32" height="32"
+                            src="https://img.icons8.com/fluency/32/twitter.png" alt="twitter" /></a>
 
                     <!-- Youtube -->
-                    <a href="#"><img width="32" height="32" src="https://img.icons8.com/color/32/youtube-play.png" alt="youtube-play"/></a>
+                    <a href="#"><img width="32" height="32"
+                            src="https://img.icons8.com/color/32/youtube-play.png" alt="youtube-play" /></a>
 
                     <!-- Facebook -->
-                    <a href="#"><img width="32" height="32" src="https://img.icons8.com/color/32/facebook.png" alt="facebook"/></a>
+                    <a href="#"><img width="32" height="32"
+                            src="https://img.icons8.com/color/32/facebook.png" alt="facebook" /></a>
 
                     <!-- Instagram -->
-                    <a href="#"><img width="32" height="32" src="https://img.icons8.com/3d-fluency/32/instagram-new.png" alt="instagram-new"/></a>
+                    <a href="#"><img width="32" height="32"
+                            src="https://img.icons8.com/3d-fluency/32/instagram-new.png" alt="instagram-new" /></a>
 
                 </div>
             </div>
@@ -176,12 +199,7 @@
     </div>
     <!-- Grid container -->
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
+
 </footer>
 <!-- Footer -->
 

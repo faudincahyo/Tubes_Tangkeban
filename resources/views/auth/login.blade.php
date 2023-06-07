@@ -60,22 +60,24 @@
                             </div>
                             </div>
 
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-md-8 mb-4">
-                                    <button type="submit" class="btn btn-outline-success" style="width: 98%">
-                                        {{ __('Continue with Google') }}
-                                        <img width="20" height="20" style="margin-bottom:2px; margin-left:3px;" src="https://img.icons8.com/fluency/20/google-logo.png" alt="google-logo"/>
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-md-8 mb-4">
-                                    <a href="{{ route('register') }}" class="text-decoration-none">
-                                        <h4 class="text-center me-3 text-primary">Daftar Sekarang</h4>
-                                    </a>
-                                </div>
-                            </div>
                         </form>
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-8 mb-4">
+                                <a href="{{ route('google.login') }}"><button type="submit" class="btn btn-outline-success" style="width: 98%">
+                                    {{ __('Continue with Google') }}
+                                    <img width="20" height="20" style="margin-bottom:2px; margin-left:3px;" src="https://img.icons8.com/fluency/20/google-logo.png" alt="google-logo"/>
+                                </button>   
+                                </a> 
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-md-8 mb-4">
+                                <a href="{{ route('register') }}" class="text-decoration-none">
+                                    <h4 class="text-center me-3 text-primary">Daftar Sekarang</h4>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

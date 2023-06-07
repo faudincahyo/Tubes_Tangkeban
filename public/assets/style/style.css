@@ -3,13 +3,30 @@
     padding: 0;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
 main{
-    height: 100vh;
-    background: rgb(199, 235, 199);
+    height: 100%;
 }
 
 .dropdown-toggle{
-    background: red;
+    font-weight: bolder;
     padding-left: 3rem;
     
 }
+
+.carousel{
+   background: url("../image/bg-carousel.png");
+}
+
+
+
+.nav-item.active a{
+    border-bottom: 2px solid #1C6758!important;
+
+}
+
+

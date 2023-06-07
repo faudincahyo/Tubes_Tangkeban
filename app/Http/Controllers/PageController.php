@@ -10,4 +10,9 @@ class PageController extends Controller
     {
         return view('pages.tiket');
     }
+
+    public function tentang()
+    {
+        return view('pages.tentang');
+    }
 }
