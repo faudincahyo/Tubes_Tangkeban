@@ -37,45 +37,64 @@
                 </div>
             @endif
    <div class="containerm d-flex justify-content-center">
-            <div id="carouselExampleCaptions" class="carousel slide">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+    <div class="card">
+        <div class="card-body">
+            <div style="border-bottom: 1px solid #000;">
+                <h2>
+                    Tiket Masuk Pintu Utama
+                </h2>
+                <p class="card-text">Bukit Tangkeban</p>
+            </div>                        
+            <div style="border-bottom: 1px solid #000;">
+                <div class="form-group">
+                    <p></p>
+                    <label for="datepicker">Pilih</label>
+                    <input type="date" class="form-control" id="datepicker" name="datepicker" required>
                 </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src={{asset('image/01.jpg')}} style="width: 100%; height = 321px" class="d-block w-347" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>First slide label</h5>
-                      <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src={{asset('image/03.jpg')}} style="width: 150%; height = 321px" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Second slide label</h5>
-                      <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src={{asset('image/04.jpg')}} style="width: 150%; height = 321px" class="d-block w-347" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Third slide label</h5>
-                      <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+                <p class="card-text">Tiket untuk Senin, 8 Mei 2023</p>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="fw-bold">Tiket Masuk Utama</p>
+                        <p>
+                            <img src="https://img.icons8.com/?size=1x&id=3160&format=png" alt="">
+                            8 Mei’23, 07:00-17:30 WIB  
+                            </p>
+                            <p>Syarat dan Ketentuan Tiket</p>
+                            <p>Eticket hanya berlaku pada tanggal kunjungan yang dipilih (tidak dapat digunakan pada tanggal lain).</p>
+                            <p>Eticket berlaku untuk 1 x Promo Tiket Bundling</p> 
+                            <p>
+                                <p class="fw-bold text-end">Rp. 15.000
+                                    <button class="btn btn-primary">
+                                    <span class="button-text">Tambah</span>
+                                  </button></p>
 
+                            </p>
+                            
+                    </div>
+                  </div>
+                  <p></p>
+            </div>
+            <div style="border-bottom: 1px solid #000;">
+                <p></p>
+                <p class="fw-bold">SubTotal</p>
+                
+                <p>
+                    <p class="fw-light">0 Ticket</p>
+                    <p class="fw-bold text-end">Rp. 0
+                        <button type="button" class="btn btn-secondary" disabled>Pilih Tiket</button>
+                      </button></p>
+
+                </p>
+
+            </div>
+            <p></p>
+            <p class="text-center">Metode Pembayaran yang Tersedia : </p>
+            <div class="text-center">
+                <img src="https://seeklogo.com/images/Q/quick-response-code-indonesia-standard-qris-logo-F300D5EB32-seeklogo.com.png" class="rounded" alt="...">
+              </div>  
+        </div>
+      </div>
+      
         </div>
                 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
