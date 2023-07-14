@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 
 class LoginController extends Controller
 {
@@ -40,48 +38,41 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        
     }
 
-    public function redirectToGoogle()
+    public function login(Request $request)
     {
-        return Socialite::driver('google')->redirect();
-    }
+        $input = $request->all();
+    
+        $this->validate($request,[
+            'email'=>'required|email',
+            'password'=>'required'
+        ]);
+        if(auth()->attempt(['email'=>$input["email"],'password'=>$input["password"]]))
+        {
+            $role=Auth::user()->role;
 
-    public function googleCallback()
-    {
-        try {
-            $google_user = Socialite::driver('google')->user();
-        } catch (\Exception $e) {
-            return redirect()->route('home');
-        }
-
-            $finduser = User::where('social_id', $google_user->id)->first();
-
-            if($finduser){
-                Auth::login($finduser, true);
-                $role=Auth::user()->role;
-
-                if($role == 'admin'){
-                    return redirect()->route('home');
-                }else{
-                    return redirect()->route('home');
-                }
-
-            }else{
-            $newUser = User::create([
-                'name' => $google_user->name,
-                'email' => $google_user->email,
-                'social_id' => $google_user->id,
-                'social_type'=> 'google',
-                'role' => 'user',
-                'password' => encrypt('my-google')
-
-            ]);
-
-                Auth::login($newUser);
+            if($role == '1')
+            {
                 return redirect()->route('dashboard');
             }
-
-
+            else
+            {
+                return redirect()->route('home');
+            }
+        }
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $this->guard()->logout();
+
+        $request->session()->flush();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
+
 }
