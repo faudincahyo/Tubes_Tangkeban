@@ -28,9 +28,9 @@ Route::get('/tentang', [App\Http\Controllers\PageController::class, 'tentang'])-
 Route::get('/pesan/{slug}', [App\Http\Controllers\PesanController::class, 'index'])->name('pesan');
 
 
-Route::get('auth/google', [App\Http\Controllers\GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('auth/google', [App\Http\Controllers\GoogleController::class, 'redirectToGoogle'])->name('google.masuk');
 Auth::routes();
-Route::get('/auth/google/callback', [App\Http\Controllers\GoogleController::class, 'googleCallback']);
+Route::get('/auth/google/signin', [App\Http\Controllers\GoogleController::class, 'googleCallback']);
 
 Route::prefix('admin')->middleware('role:admin')->group(function () {
     // dashboard

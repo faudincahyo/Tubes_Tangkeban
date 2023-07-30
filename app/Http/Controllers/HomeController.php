@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,7 +30,8 @@ class HomeController extends Controller
     
     public function index()
     {
-        return view('pages.home');
+        $data = Admin::paginate(3);
+        return view('pages.home',compact('data'));
     }
 
     public function navbar()

@@ -65,48 +65,38 @@
             </div>
         </div>
         <div id="main">
-            <header class="mb-0">
-                <div class="page-heading">
-                    <div class="d-flex justify-content-between">
-                        <div class="title">
-                            <a href="#" class="burger-btn d-block d-xl-none">
-                                <i class="bi bi-justify fs-3"></i>
-                            </a>
-                            <div class="d-none d-xxl-block">
-                                <h3 class="mb-0">@yield('title')</h3>
-                            </div>
-                        </div>
-                        <div class="header-top-right">
-                            <ul class="navbar-nav ms-auto">
+            <nav class="navbar navbar-expand-md dropdown-menu">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                            @auth
                                 <li class="nav-item dropdown">
-                                    <a href="#" id="navbarDropdown topbarUserDropdown"
-                                        class="nav-link user-dropdown d-flex align-items-center dropend dropdown-toggle"
-                                        role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <div class="text">
-                                            <h6 class="user-dropdown-name">{{ Auth::user()->name }}</h6>
-                                            <p class="user-dropdown-status text-sm text-muted">
-                                                Admin
-                                            </p>
-                                        </div>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ Auth::user()->name }}
                                     </a>
-                                </li>
-                                <ul class="dropdown-menu dropdown-menu-end shadow-lg"
-                                    aria-labelledby="topbarUserDropdown" style="">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                            Logout</a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <small class="ms-2 fw-bold">Admin</small>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <!-- Add any other links related to the user's profile here -->
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                Logout
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
                                             </form>
-                                    </li>
-                                </ul>
-                            </ul>
-                        </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endauth
+                        </ul>
                     </div>
                 </div>
-            </header>
+            </nav>
             <div class="page-content">
                 @yield('content')
             </div>
@@ -123,11 +113,11 @@
             </footer>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
     @yield('scripts')
 </body>
 

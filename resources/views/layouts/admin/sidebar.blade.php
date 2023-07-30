@@ -17,13 +17,5 @@
                 <span>Tambah Tempat Wisata</span>
             </a>
         </li>
-
-        <li class="sidebar-item {{ (request()->is('v1/cities')) ? 'active' : '' }}">
-            <a href="https://wa.me/62895324835376" target="__blank" class='sidebar-link'>
-                <i class="bi bi-whatsapp"></i>
-                <span>Hubungi Author</span>
-            </a>
-        </li>
-
     </ul>
 </div>

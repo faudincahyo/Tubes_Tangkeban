@@ -24,11 +24,11 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="p-3 w-25" >
-                <h4 style="color: #1C6758; font-weight:bolder">BUKIT TANGKEBAN</h4>
-                <h4 class="text-success" tyle="font-weight:1px">Bukit Indah Permai</h4>
-            </div>
             <div class="container-fluid">
+                <div class="p-3 w-25 navbar-brand" >
+                    <h4 style="color: #1C6758; font-weight:bolder">BUKIT TANGKEBAN</h4>
+                    <h4 class="text-success" tyle="font-weight:1px">Bukit Indah Permai</h4>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

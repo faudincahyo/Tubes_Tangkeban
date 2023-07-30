@@ -68,7 +68,6 @@ class LoginController extends Controller
     {
         Auth::logout();
         $this->guard()->logout();
-
         $request->session()->flush();
         $request->session()->invalidate();
         $request->session()->regenerateToken();

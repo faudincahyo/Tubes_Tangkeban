@@ -90,7 +90,7 @@
                     </form>
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
-                            <a href="{{ route('google.login') }}"><button type="submit" class="btn btn-outline-success" style="width: 98%">
+                            <a href="{{ route('google.masuk') }}"><button type="submit" class="btn btn-outline-success" style="width: 98%">
                                 {{ __('Continue with Google') }}
                                 <img width="20" height="20" style="margin-bottom:2px; margin-left:3px;" src="https://img.icons8.com/fluency/20/google-logo.png" alt="google-logo"/>
                             </button>

@@ -39,14 +39,21 @@
         </div>
 
         {{-- Konten --}}
-        <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
-            <div class="col">
-                <div class="card border-0" style="background: rgb(199, 235, 199)">
-                    <img src="{{ asset('assets/image/bg-carousel.png') }}" class="card-img-top">
-                    <h5>Judul</h5>
-                </div>
+        <div class="row row-cols-md-3 mt-5 justify-content-center">
+                @foreach ($data as $item)
+                    <div class="card border-success" style="width: 23rem; margin-right:12px">
+                        <img src="/img/{{ $item->image }}" class="card-img-top" alt="Uploaded"
+                            style="width: 300px;height:310px; margin-left:1rem; padding-top:2rem">
+                        <div class="card-body ms-3">
+                            <h5 class="card-title" style="color: green">{{ $item->title }}</h5>
+                            <p class="card-text text-success">{!! $item->desc !!}</p>                           
+                        </div>
+                    </div>
+                @endforeach
             </div>
-        </div>
+            <div class="d-flex mt-5 m-auto justify-content-end">
+                {!! $data->links() !!}
+            </div>
 
         {{-- Sejarah Singkat --}}
         <div class="card mb-3 mt-5

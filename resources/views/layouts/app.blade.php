@@ -19,10 +19,10 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="p-5 w-25 navbar-brand" >
+                    <img src="{{ asset('assets/image/LOGO BUKIT TANGKEBAN 1.png') }}" alt="" class="w-25">
+            </div>
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('assets/image/LOGO BUKIT TANGKEBAN 1.png') }}" alt="" class="w-50">
-                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
